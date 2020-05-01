@@ -19,4 +19,6 @@ public abstract class Buyable {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public abstract String description();
 }
