@@ -8,3 +8,21 @@
         Egyenlőre ez egy prototipus, <span style="text-decoration: underline;">GUI nem elérhető hozzá.</span>
     </p>
 </div>
+
+<div>
+    <h1>Alapelvek</h1>
+    <ul>
+        <li>Single-Responsibility Principle</li>
+        <li>Open-Closed Principle</li>
+        <li>Dependency Inversion Principle</li>
+    </ul>
+</div>
+
+<div>
+    <h1>Tervezési minták</h1>
+    <ul>
+        <li>Strategy Pattern</li>
+        <li>Decorator Pattern</li>
+        <li>Factory Method Pattern</li>
+    </ul>
+</div>
