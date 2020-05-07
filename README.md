@@ -1,9 +1,10 @@
 <div>
     <h1>Az applikációról</h1>
     <p>
-        Egy autógyár megrendelései, készletei nyílvántartására szólgál.<br>
-        Lehetőség van benne különböző felszereltségű autókat összerakni,<br>
-        amihez az extrákhoz függően magától hozzárendeli az össz árat.<br>
+        Egy autógyár új típust készít, nevezetesen a Bömbi márka MX22 típusa.
+        A program a megrendelései, készletei nyílvántartására szólgál.<br>
+        Lehetőség van benne különböző felszereltségű autókat összerakni (NoExtra, FullExtra),<br>
+        amihez az extráktól függően magától hozzárendeli az össz árat.<br>
         Be lehet állítani külön mind az autó, mint az extrák értékét.<br>
         Egyenlőre ez egy prototipus, <span style="text-decoration: underline;">GUI nem elérhető hozzá.</span>
     </p>

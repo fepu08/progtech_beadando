@@ -5,24 +5,20 @@ import hu.frankb.decorators.Buyable;
 // this class is part of all of the patterns included
 public class Car implements Buyable, Comparable<Car>{
     private int id;
-    private String name;
-    private String type;
-    private double price;
+    private String name = "Bömbi";
+    private String type = "MX22";
+    private double price = 10000000;
 
     public int getId(){return id;}
     public void setId(int id){this.id = id;}
     public String getName(){return name;};
     public void setName(String name){this.name = name;}
-    //TODO: ez így jó lesz?
     public void setPrice(double price){this.price = price;}
 
-    public Car(){};
+    //public Car(){};
 
-    public Car(int id, String name, String type, double price){
+    public Car(int id){
         this.id = id;
-        this.name = name;
-        this.type = type;
-        this.price = price;
     }
 
     //Decorator method

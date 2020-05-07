@@ -70,7 +70,7 @@ public class CarStore {
     protected Buyable createCar(CarFactory carFactory){
         //From the carFactory it get of parameter, it decides which CarFactroy to use
         //create the basic car
-        Buyable car = new Car(-1, "Bömbi", "MX22", 10000000);
+        Buyable car = new Car(this.setId());
 
         //LET'S DECORATE \,,\,
         // add rim decorator
@@ -79,6 +79,15 @@ public class CarStore {
         car = carFactory.createSeatCoverDecorator(car);
 
         return car;
+    }
+
+    private int setId() {
+        if(cars.isEmpty()){
+            return 1;
+        } else {
+            // if cars is not empty, return the last members id + 1;
+            return 1 + (cars.get(cars.size() - 1).getId());
+        }
     }
 
     // part of AbstractFactory
