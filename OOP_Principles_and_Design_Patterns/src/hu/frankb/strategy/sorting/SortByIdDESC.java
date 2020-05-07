@@ -1,6 +1,6 @@
 package hu.frankb.strategy.sorting;
 
-import hu.frankb.decorators.Car;
+import hu.frankb.Car;
 
 import java.util.Collections;
 import java.util.List;

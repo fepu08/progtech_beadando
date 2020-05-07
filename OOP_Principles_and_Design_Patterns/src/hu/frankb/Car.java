@@ -1,5 +1,8 @@
-package hu.frankb.decorators;
+package hu.frankb;
 
+import hu.frankb.decorators.Buyable;
+
+// this class is part of all of the patterns included
 public class Car implements Buyable, Comparable<Car>{
     private int id;
     private String name;
@@ -12,6 +15,8 @@ public class Car implements Buyable, Comparable<Car>{
     public void setName(String name){this.name = name;}
     //TODO: ez így jó lesz?
     public void setPrice(double price){this.price = price;}
+
+    public Car(){};
 
     public Car(int id, String name, String type, double price){
         this.id = id;

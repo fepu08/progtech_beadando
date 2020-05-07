@@ -1,6 +1,5 @@
 package hu.frankb;
 
-import hu.frankb.decorators.Car;
 import hu.frankb.strategy.sorting.SortByIdASC;
 import hu.frankb.strategy.sorting.SortByIdDESC;
 

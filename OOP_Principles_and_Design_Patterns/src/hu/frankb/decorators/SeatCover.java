@@ -1,4 +1,24 @@
 package hu.frankb.decorators;
 
-public interface SeatCover extends Buyable{
+public abstract class SeatCover implements Buyable{
+    //This is what we will decorate
+    private Buyable buyable;
+    private String name;
+    private double price;
+
+    public SeatCover(Buyable buyable){
+        this.buyable = buyable;
+    }
+
+    // decorator method
+    @Override
+    public String getDescription() {
+        return buyable.getDescription() + " Üléshuzat : " + name;
+    }
+
+    // decorator method
+    @Override
+    public double getPrice() {
+        return buyable.getPrice() + price;
+    }
 }

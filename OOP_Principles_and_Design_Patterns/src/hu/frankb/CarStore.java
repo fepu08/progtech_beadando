@@ -1,7 +1,6 @@
 package hu.frankb;
 
 import hu.frankb.decorators.Buyable;
-import hu.frankb.decorators.Car;
 import hu.frankb.factory.CarFactory;
 import hu.frankb.factory.FullExtraCarFactory;
 import hu.frankb.factory.NoExtraCarFactory;
@@ -69,9 +68,8 @@ public class CarStore {
 
     // part of AbstractFactory
     protected Buyable createCar(CarFactory carFactory){
-        Buyable car = null;
+        Buyable car = new Car();
         //TODO: összerakni a car-t mint decoration
-        carFactory.createCar();
         carFactory.createRimDecorator();
         carFactory.createSeatDecorator();
 
