@@ -21,9 +21,9 @@
 <div>
     <h1>Tervezési minták</h1>
     <ul>
-        <li>Strategy Pattern</li>
-        <li>Decorator Pattern</li>
-        <li>Factory Method Pattern</li>
+        <li>Strategy Pattern - agy Car objektumokból álló listát rendez id-szerint csökkenő vagy növekvő sorrendbe</li>
+        <li>Decorator Pattern - az alap Car objektumot szereli fel különböző "kiegészítőkkel" (pl. Rim, Seat)</li>
+        <li>Abstract Factory Pattern - az autókat gyártja le, két féle képpen: NoExtra és FullExtra </li>
     </ul>
 </div>
 
