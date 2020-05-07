@@ -1,7 +1,7 @@
 <div>
     <h1>Az applikációról</h1>
     <p>
-        Egy autógyár új típust készít, nevezetesen a Bömbi márka MX22 típusa.
+        Egy autógyár új típust készít, nevezetesen a Bömbi márka MX22 típusa.<br>
         A program a megrendelései, készletei nyílvántartására szólgál.<br>
         Lehetőség van benne különböző felszereltségű autókat összerakni (NoExtra, FullExtra),<br>
         amihez az extráktól függően magától hozzárendeli az össz árat.<br>
