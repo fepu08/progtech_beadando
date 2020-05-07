@@ -1,6 +1,6 @@
 package hu.frankb.factory;
 
-import hu.frankb.Buyable;
+import hu.frankb.decorators.Buyable;
 
 public class NoExtraCarFactory implements CarFactory {
     @Override

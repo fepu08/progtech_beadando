@@ -1,5 +1,7 @@
 package hu.frankb;
 
+import hu.frankb.decorators.Buyable;
+import hu.frankb.decorators.Car;
 import hu.frankb.factory.CarFactory;
 import hu.frankb.factory.FullExtraCarFactory;
 import hu.frankb.factory.NoExtraCarFactory;

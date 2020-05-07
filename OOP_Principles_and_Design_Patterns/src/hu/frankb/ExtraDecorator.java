@@ -1,4 +1,6 @@
 package hu.frankb;
 
-public abstract class ExtraDecorator extends Buyable{
+import hu.frankb.decorators.Buyable;
+
+public abstract class ExtraDecorator extends Buyable {
 }
