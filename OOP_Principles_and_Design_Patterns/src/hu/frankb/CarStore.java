@@ -1,12 +1,15 @@
 package hu.frankb;
 
+import hu.frankb.factory.CarFactory;
+import hu.frankb.factory.FullExtraCarFactory;
+import hu.frankb.factory.NoExtraCarFactory;
 import hu.frankb.strategy.sorting.CarSortingStrategy;
 import hu.frankb.strategy.sorting.SortByIdASC;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarList{
+public class CarStore {
     List<Car> cars;
     CarSortingStrategy carSortingStrategy; // Aggregáció - HAS-A kapcsolat - GOF1
 
@@ -44,6 +47,7 @@ public class CarList{
 
     private boolean addCarPreCondition(Car newCar) {
         for(int i = 0; i < cars.size(); i++){
+            // nem lehet az id-je az, ami a listában már foglalt
             if (cars.get(i).getId() == newCar.getId()){
                 return false;
             }
@@ -61,11 +65,28 @@ public class CarList{
         return false;
     }
 
-    public CarList(){
+    // part of AbstractFactory
+    protected Buyable createCar(CarFactory carFactory){
+        Buyable car = null;
+
+        return car;
+    }
+
+    // part of AbstractFactory
+    public Buyable createNoExtraCar(){
+           return createCar(new NoExtraCarFactory());
+    }
+
+    // part of AbstractFactory
+    public Buyable createFullExtraCar(){
+        return createCar(new FullExtraCarFactory());
+    }
+
+    public CarStore(){
         cars = new ArrayList<>();
         carSortingStrategy = new SortByIdASC();
     }
-    public CarList(List<Car> cars, CarSortingStrategy carSortingStrategy) {
+    public CarStore(List<Car> cars, CarSortingStrategy carSortingStrategy) {
         this.cars = cars;
         this.carSortingStrategy = carSortingStrategy;
     }

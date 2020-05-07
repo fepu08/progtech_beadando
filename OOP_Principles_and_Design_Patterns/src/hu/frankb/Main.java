@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-	    CarList cars = new CarList(populate(), new SortByIdASC());
+	    CarStore cars = new CarStore(populate(), new SortByIdASC());
 
         Car car = new Car(1, "Francis", "Bacon 123", 1110123);
         System.out.println("Try Car toString");
