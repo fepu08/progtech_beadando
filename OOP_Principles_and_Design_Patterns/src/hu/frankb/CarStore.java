@@ -68,10 +68,15 @@ public class CarStore {
 
     // part of AbstractFactory
     protected Buyable createCar(CarFactory carFactory){
-        Buyable car = new Car();
-        //TODO: összerakni a car-t mint decoration
-        carFactory.createRimDecorator();
-        carFactory.createSeatDecorator();
+        //From the carFactory it get of parameter, it decides which CarFactroy to use
+        //create the basic car
+        Buyable car = new Car(-1, "Bömbi", "MX22", 10000000);
+
+        //LET'S DECORATE \,,\,
+        // add rim decorator
+        car = carFactory.createRimDecorator(car);
+        // add seat cover decorator
+        car = carFactory.createSeatCoverDecorator(car);
 
         return car;
     }
