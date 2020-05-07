@@ -68,6 +68,10 @@ public class CarStore {
     // part of AbstractFactory
     protected Buyable createCar(CarFactory carFactory){
         Buyable car = null;
+        //TODO: összerakni a car-t mint decoration
+        carFactory.createCar();
+        carFactory.createRimDecorator();
+        carFactory.createSeatDecorator();
 
         return car;
     }
