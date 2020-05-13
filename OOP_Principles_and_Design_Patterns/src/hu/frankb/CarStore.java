@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarStore {
-    List<Car> cars;
+    List<CarStoreListElement> cars;
     CarSortingStrategy carSortingStrategy; // Aggregáció - HAS-A kapcsolat - GOF1
 
     public List<Car> getCars() {

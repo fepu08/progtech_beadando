@@ -5,6 +5,16 @@ import hu.frankb.decorators.Buyable;
 public class CarStoreListElement implements Comparable<CarStoreListElement>{
     private int id;
     private Buyable buyable;
+    //maybe add a time stamp ...
+
+    public CarStoreListElement(Buyable buyable){
+        this.buyable = buyable;
+    }
+
+    public CarStoreListElement(int id, Buyable buyable){
+        this(buyable);
+        this.id = id;
+    }
 
     public int getId(){return id;}
     public void setId(int id){this.id = id;}
