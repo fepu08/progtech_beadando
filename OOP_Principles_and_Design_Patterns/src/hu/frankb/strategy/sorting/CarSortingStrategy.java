@@ -1,9 +1,9 @@
 package hu.frankb.strategy.sorting;
 
-import hu.frankb.Car;
+import hu.frankb.CarStoreListElement;
 
 import java.util.List;
 
 public interface CarSortingStrategy {
-    void sort(List<Car> input);
+    void sort(List<CarStoreListElement> input);
 }

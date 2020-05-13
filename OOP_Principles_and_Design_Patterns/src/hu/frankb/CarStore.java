@@ -4,6 +4,7 @@ import hu.frankb.decorators.Buyable;
 import hu.frankb.factory.CarFactory;
 import hu.frankb.factory.FullExtraCarFactory;
 import hu.frankb.factory.NoExtraCarFactory;
+import hu.frankb.strategy.sorting.Car;
 import hu.frankb.strategy.sorting.CarSortingStrategy;
 import hu.frankb.strategy.sorting.SortByIdASC;
 
@@ -14,11 +15,11 @@ public class CarStore {
     List<CarStoreListElement> cars;
     CarSortingStrategy carSortingStrategy; // Aggregáció - HAS-A kapcsolat - GOF1
 
-    public List<Car> getCars() {
+    public List<CarStoreListElement> getCars() {
         return cars;
     }
 
-    public void setCars(List<Car> cars) {
+    public void setCars(List<CarStoreListElement> cars) {
         this.cars = cars;
     }
 
@@ -37,22 +38,10 @@ public class CarStore {
     }
 
 
-    public boolean addCar(Car newCar){
-        if(addCarPreCondition(newCar)){
-            cars.add(newCar);
-            return true;
-        } else {
-            return false;
-        }
-    }
+    public boolean addCar(Buyable newCar){
+        CarStoreListElement newElement = new CarStoreListElement(this.getNextId(), newCar);
+        cars.add(newElement);
 
-    private boolean addCarPreCondition(Car newCar) {
-        for(int i = 0; i < cars.size(); i++){
-            // nem lehet az id-je az, ami a listában már foglalt
-            if (cars.get(i).getId() == newCar.getId()){
-                return false;
-            }
-        }
         return true;
     }
 
@@ -67,10 +56,10 @@ public class CarStore {
     }
 
     // part of AbstractFactory
-    protected Buyable createCar(CarFactory carFactory){
+    private Buyable createCar(CarFactory carFactory){
         //From the carFactory it get of parameter, it decides which CarFactroy to use
         //create the basic car
-        Buyable car = new Car(this.setId());
+        Buyable car = new Car();
 
         //LET'S DECORATE \,,\,
         // add rim decorator
@@ -81,30 +70,33 @@ public class CarStore {
         return car;
     }
 
-    private int setId() {
+    private int getNextId() {
         if(cars.isEmpty()){
             return 1;
         } else {
             // if cars is not empty, return the last members id + 1;
-            return 1 + (cars.get(cars.size() - 1).getId());
+            int IdOfLastElement = (cars.get(cars.size() - 1).getId());
+            return IdOfLastElement + 1;
         }
     }
 
     // part of AbstractFactory
-    public Buyable createNoExtraCar(){
-           return createCar(new NoExtraCarFactory());
+    public void createNoExtraCar(){
+           Buyable newCar = createCar(new NoExtraCarFactory());
+           this.addCar(newCar);
     }
 
     // part of AbstractFactory
-    public Buyable createFullExtraCar(){
-        return createCar(new FullExtraCarFactory());
+    public void createFullExtraCar(){
+        Buyable newCar =  createCar(new FullExtraCarFactory());
+        this.addCar(newCar);
     }
 
     public CarStore(){
         cars = new ArrayList<>();
         carSortingStrategy = new SortByIdASC();
     }
-    public CarStore(List<Car> cars, CarSortingStrategy carSortingStrategy) {
+    public CarStore(List<CarStoreListElement> cars, CarSortingStrategy carSortingStrategy) {
         this.cars = cars;
         this.carSortingStrategy = carSortingStrategy;
     }

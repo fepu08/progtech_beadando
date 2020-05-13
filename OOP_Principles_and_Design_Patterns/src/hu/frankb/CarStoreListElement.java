@@ -32,4 +32,9 @@ public class CarStoreListElement implements Comparable<CarStoreListElement>{
             return 0; // they are equals
         }
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + " " + buyable.getDescription();
+    }
 }

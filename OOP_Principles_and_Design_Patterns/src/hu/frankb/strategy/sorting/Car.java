@@ -1,4 +1,4 @@
-package hu.frankb;
+package hu.frankb.strategy.sorting;
 
 import hu.frankb.decorators.Buyable;
 
