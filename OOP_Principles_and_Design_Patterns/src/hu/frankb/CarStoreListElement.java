@@ -35,6 +35,6 @@ public class CarStoreListElement implements Comparable<CarStoreListElement>{
 
     @Override
     public String toString() {
-        return "ID: " + id + " " + buyable.getDescription();
+        return "ID: " + id + " " + buyable.getDescription() + ", Össz.Ár: " + this.buyable.getPrice();
     }
 }

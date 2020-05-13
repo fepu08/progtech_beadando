@@ -5,6 +5,6 @@ public class SyntheticsSeatCover extends SeatCover {
     private static double price = 5000;
 
     public SyntheticsSeatCover(Buyable buyable) {
-        super(buyable);
+        super(name, price, buyable);
     }
 }

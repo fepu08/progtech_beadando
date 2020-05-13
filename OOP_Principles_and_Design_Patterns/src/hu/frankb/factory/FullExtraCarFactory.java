@@ -6,15 +6,10 @@ import hu.frankb.decorators.LeatherSeatCover;
 
 public class FullExtraCarFactory implements CarFactory {
     @Override
-    public Buyable createRimDecorator(Buyable buyable) {
-        return new AluminiumRim(buyable);
-    }
+    public Buyable createRimDecorator(Buyable buyable) { return new AluminiumRim(buyable); }
 
     @Override
     public Buyable createSeatCoverDecorator(Buyable buyable) {
         return new LeatherSeatCover(buyable);
-    }
-
-    public FullExtraCarFactory(Buyable decoratedBuyable){
     }
 }

@@ -4,7 +4,6 @@ import hu.frankb.decorators.Buyable;
 import hu.frankb.factory.CarFactory;
 import hu.frankb.factory.FullExtraCarFactory;
 import hu.frankb.factory.NoExtraCarFactory;
-import hu.frankb.strategy.sorting.Car;
 import hu.frankb.strategy.sorting.CarSortingStrategy;
 import hu.frankb.strategy.sorting.SortByIdASC;
 
@@ -62,9 +61,8 @@ public class CarStore {
         Buyable car = new Car();
 
         //LET'S DECORATE \,,\,
-        // add rim decorator
+        // add the decorators
         car = carFactory.createRimDecorator(car);
-        // add seat cover decorator
         car = carFactory.createSeatCoverDecorator(car);
 
         return car;

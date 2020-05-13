@@ -5,6 +5,6 @@ public class SteelRim extends Rim {
     private static double price = 40000;
 
     public SteelRim(Buyable buyable) {
-        super(buyable);
+        super(name, price, buyable);
     }
 }

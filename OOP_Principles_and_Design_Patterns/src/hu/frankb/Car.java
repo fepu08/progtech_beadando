@@ -1,4 +1,4 @@
-package hu.frankb.strategy.sorting;
+package hu.frankb;
 
 import hu.frankb.decorators.Buyable;
 
@@ -6,7 +6,7 @@ import hu.frankb.decorators.Buyable;
 public class Car implements Buyable{
     private String name = "Bömbi";
     private String type = "MX22";
-    private double price = 10000000;
+    private double price = 1000000;
 
     public String getName(){return name;};
     public void setName(String name){this.name = name;}
@@ -27,6 +27,6 @@ public class Car implements Buyable{
     //TODO override toString()
     @Override
     public String toString() {
-        return ("Name: " + name + " Type: " + type + " Price: " + price + "Ft");
+        return ("Name: " + name + ", Type: " + type + ", Base Price: " + price + "Ft");
     }
 }

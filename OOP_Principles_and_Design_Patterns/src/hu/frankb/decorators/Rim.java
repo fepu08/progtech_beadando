@@ -5,14 +5,16 @@ public abstract class Rim implements Buyable {
     private String name;
     private double price;
 
-    public Rim(Buyable buyable){
+    public Rim(String name, double price, Buyable buyable){
+        this.name = name;
+        this.price = price;
         this.buyable = buyable;
     }
 
     // decorator method
     @Override
     public String getDescription() {
-        return buyable.getDescription() + " Felni : " + name;
+        return buyable.getDescription() + ", Felni : " + name;
     }
 
     // decorator method

@@ -1,14 +1,10 @@
 package hu.frankb;
 
-import hu.frankb.strategy.sorting.Car;
-import hu.frankb.strategy.sorting.SortByIdASC;
 import hu.frankb.strategy.sorting.SortByIdDESC;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
-
     public static void main(String[] args) {
 	    CarStore cars = populate();
 
@@ -23,7 +19,6 @@ public class Main {
         cars.sort();
         System.out.println("Changed the CarList Sorting Strategy to SortIdByDESC");
         System.out.println(cars + "\n");
-
     }
 
     private static CarStore populate(){
