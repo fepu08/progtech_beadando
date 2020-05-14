@@ -1,6 +1,7 @@
 package hu.frankb;
 
 import hu.frankb.decorators.Buyable;
+import hu.frankb.exceptions.InvalidIndexException;
 import hu.frankb.factory.CarFactory;
 import hu.frankb.factory.FullExtraCarFactory;
 import hu.frankb.factory.NoExtraCarFactory;

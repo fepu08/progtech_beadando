@@ -1,6 +1,7 @@
 package hu.frankb;
 
 import hu.frankb.decorators.Buyable;
+import hu.frankb.exceptions.InvalidIndexException;
 
 public class CarStoreListElement implements Comparable<CarStoreListElement>{
     private int id;
@@ -17,7 +18,10 @@ public class CarStoreListElement implements Comparable<CarStoreListElement>{
     }
 
     public int getId(){return id;}
-    public void setId(int id){this.id = id;}
+    public void setId(int id) throws InvalidIndexException {
+        if(id < 0) throw new InvalidIndexException("Az id nem lehet negatív");
+        this.id = id;
+    }
     public Buyable getBuyable(){return buyable;}
     public void setBuyable(Buyable buyable){this. buyable = buyable;}
 
